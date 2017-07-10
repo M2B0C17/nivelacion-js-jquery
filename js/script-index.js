@@ -2,11 +2,11 @@ $(document).ready( function(){
 
 	// ocultar flecha y mantener menu
 	$('.js-back').hide(1000);
-	$('.js-menu').show(1000);	
+	$('.js-menu').show(1000); // tiempo 	
 
 	// imprimir Texto NUEVAS RECETAS
 	$(function(printNews){
-		$('p').append( "NUEVAS RECETAS" );
+		$('p').append("NUEVAS RECETAS");
 	})
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
@@ -22,9 +22,19 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
-function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+function renderHighlightedRecipes(recipesArray) {	
+	//For para recorrer
+	var array = recipesArray.forEach(function(el){ // forEach para que recorra
+		var filtro = el.highlighted;
+
+		if(filtro == true){
+			return renderRecipe();
+		}
+	})
+		console.log('Recipes: ', recipesArray);
 }
+
+
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
