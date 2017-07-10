@@ -4,10 +4,18 @@ $(document).ready( function(){
 	$('.js-back').hide(1000);
 	$('.js-menu').show(1000);	
 
+	// imprimir Texto NUEVAS RECETAS
+	$(function(printNews){
+		$('p').append( "NUEVAS RECETAS" );
+	})
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
 });
+
+
+	
 
 
 /*
