@@ -43,6 +43,27 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
+
+	$.ajax({
+		url: '', // link donde estan todos los pokes
+		type: 'GET', // obtener datos
+		dataType: 'JSON', 
+		data: {'limit': '811'}, // hasta 811 pokes :S
+	})
+	.done(function(pok) {
+		mostrar(pok.results); // variable que recorrera los pokes
+		console.log(pok);
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error"); // para errores
+	})
+	.always(function() {
+		console.log("complete"); 
+});
+
+	$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">'+ title + '</span><span class="metadata-recipe"><span class="author-recipe">' + source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span></span></span></span><img src="<img src="img/recipes/640x480/' + recipe.name + '.jpg"/></a>');
+
 	console.log('Voy a pintar la receta: ', recipe);
 }
 
