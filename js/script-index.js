@@ -1,5 +1,9 @@
 $(document).ready( function(){
 
+	// ocultar flecha y mantener menu
+	$('.js-back').hide(1000);
+	$('.js-menu').show(1000);	
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
