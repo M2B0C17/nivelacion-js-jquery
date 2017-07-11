@@ -28,12 +28,11 @@ function renderHighlightedRecipes(recipesArray) {
 		var filtro = el.highlighted;
 
 		if(filtro == true){
-			return renderRecipe();
+			return renderRecipe(el); // faltaba colocarle el valor dentro de la funcion para que funcione la iteración
 		}
-	})
-		console.log('Recipes: ', recipesArray);
+	})	
+	console.log('Recipes: ', recipesArray);
 }
-
 
 
 /*
